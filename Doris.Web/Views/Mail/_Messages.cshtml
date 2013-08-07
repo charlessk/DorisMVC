@@ -1,0 +1,25 @@
+﻿@model Doris.Web.Models.MessageView
+
+@{
+    //ViewBag.Title = "Messages";
+    Layout = null;
+}
+
+
+     <fieldset class="display-set">
+         <legend></legend>
+         <div class="display-label">Ticket ID</div>
+         <div class="display-field">1</div>
+        
+         <div class="display-label">From</div>
+         <div class="display-field">Charles Skorstad</div>
+        
+         <div class="display-label">To</div>
+         <div class="display-field">Caroline Skorstad</div>
+     </fieldset>
+ 
+<p>
+    @Html.ActionLink("Reply", "Reply", new { id = 1 }, new {@class = "replyDlg actionLnkBttn", tittle = "Reply message"})
+</p>
+
+

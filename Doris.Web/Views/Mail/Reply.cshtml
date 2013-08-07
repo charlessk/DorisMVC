@@ -1,0 +1,14 @@
+﻿@model Doris.Web.Models.ReplyViewModel
+@{
+    ViewBag.Title = "Reply";
+}
+
+<div>
+    @{
+        Html.RenderPartial("_Reply");
+    }
+</div>
+<div>
+        @Html.ActionLink("Back", "Details", "Ticket", new {id = Model.TicketId},null)
+    
+</div>

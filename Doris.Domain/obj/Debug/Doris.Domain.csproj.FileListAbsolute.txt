@@ -1,0 +1,5 @@
+C:\Users\Charles\Documents\Visual Studio 2012\Projects\DorisMVC\Doris.Domain\bin\Debug\Doris.Domain.dll
+C:\Users\Charles\Documents\Visual Studio 2012\Projects\DorisMVC\Doris.Domain\bin\Debug\Doris.Domain.pdb
+C:\Users\Charles\Documents\Visual Studio 2012\Projects\DorisMVC\Doris.Domain\obj\Debug\Doris.Domain.dll
+C:\Users\Charles\Documents\Visual Studio 2012\Projects\DorisMVC\Doris.Domain\obj\Debug\Doris.Domain.pdb
+C:\Users\Charles\Documents\Visual Studio 2012\Projects\DorisMVC\Doris.Domain\obj\Debug\Doris.Domain.csprojResolveAssemblyReference.cache

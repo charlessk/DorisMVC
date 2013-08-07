@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Doris.Web.Models.MessageView>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h2>Details</h2>
+<div>
+    <input type="checkbox" id="test" class="actionLnkBttn"/><label for="test">Toggle</label>
+    <a href="#" class="lnkBttn actionLnkBttn"  id ='@Url.Action("Details", "Ticket", new{id = Model.First().TicketId})'>@Html.DisplayFor(model=>model.First().LockBttn).ToString()</a>
+    @Html.ActionLink("Priority", "Details", "Ticket", new {id = Model.First().TicketId}, new {@class = "ModalDlg actionLnkBttn", data_dialog_id="priorDialog",data_dialog_title="Set Priority"})
+    @Html.ActionLink("Note",  "Details", "Ticket", new {id = Model.First().TicketId}, new {@class = "ModalDlg actionLnkBttn", data_dialog_id="priorDialog",data_dialog_title="Set Priority"})
+    @Html.ActionLink("Close", "Details", "Ticket", new {id = Model.First().TicketId}, new {@class = "ModalDlg actionLnkBttn", data_dialog_id="priorDialog",data_dialog_title="Set Priority"})
+    @Html.ActionLink("Reopen","Details", "Ticket", new {id = Model.First().TicketId}, new {@class = "ModalDlg actionLnkBttn", data_dialog_id="priorDialog",data_dialog_title="Set Priority"})
+
+</div>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.From)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.To)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Body)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.From)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.To)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+</table>
+<div class="replyMessages" >
+   @Html.ActionLink("Reply", "Reply", "Mail", new {id = Model.First().TicketId}, new {@class = "ModalDlg actionLnkBttn", data_dialog_id="replyDialog",data_dialog_title="Reply Ticket"})  
+</div>

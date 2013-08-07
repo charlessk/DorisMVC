@@ -1,0 +1,96 @@
+﻿@model Doris.Web.Models.ReplyViewModel
+
+<h2>Reply</h2>
+@using (Html.BeginForm("Reply", "Mail", FormMethod.Post, new { id = "target" }))
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>ReplyViewModel</legend>
+
+        <div class="editor-label ">
+            @Html.LabelFor(model => model.TicketId)
+        </div>
+        <div class="editor-field readonly">
+            @Html.TextBoxFor(model => model.TicketId, new {  disabled="disabled"})
+            @Html.ValidationMessageFor(model => model.TicketId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AddressBook)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AddressBook)
+            @Html.ValidationMessageFor(model => model.AddressBook)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.From)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.From)
+            @Html.ValidationMessageFor(model => model.From)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Send)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Send)
+            @Html.ValidationMessageFor(model => model.Send)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cc)
+            @Html.ValidationMessageFor(model => model.Cc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bcc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Bcc)
+            @Html.ValidationMessageFor(model => model.Bcc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Body)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Body)
+            @Html.ValidationMessageFor(model => model.Body)
+        </div>
+        
+     
+            <div class="nonAjax btn-Panel"><input type="submit" class="close"  value="Save" /></div>
+        
+    </fieldset>
+}
+
+<style type="text/css">
+div.edit-set-cbox
+{
+    width: 440px;
+    padding: 6px 10px 14px 10px;
+    background-color: #BADABF;
+    margin: 5px 5px 5px 5px;
+    border: 3px double #8F8F8F;
+}   
+div.nonAjax
+{
+    display: block;
+    margin: 5px 0 5px 30px;
+}
+.button-cbox:hover {
+    background-color: white;
+    color: #006EFF;
+    font-weight: bold;
+}
+
+div.btn-Panel 
+{
+    display: none;
+}
+</style>

@@ -1,0 +1,99 @@
+﻿@model Doris.Web.Models.CustomerModel
+
+@{
+    Layout = null;
+}
+
+    <h2>Add Customer</h2>
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>CustomerModel</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.FirstName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Address)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Zip)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Zip)
+                @Html.ValidationMessageFor(model => model.Zip)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreateDate)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CreateDate)
+                @Html.ValidationMessageFor(model => model.CreateDate)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreateBy)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CreateBy)
+                @Html.ValidationMessageFor(model => model.CreateBy)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CustomerTypeId)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CustomerTypeId)
+                @Html.ValidationMessageFor(model => model.CustomerTypeId)
+            </div>
+    
+             <div class="nonAjax btn-Panel"><input type="submit" class="close"  value="Save" /></div>
+        </fieldset>
+    }
+    
+
+<style type="text/css">
+div.edit-set-cbox
+{
+    width: 440px;
+    padding: 6px 10px 14px 10px;
+    background-color: #BADABF;
+    margin: 5px 5px 5px 5px;
+    border: 3px double #8F8F8F;
+}   
+div.nonAjax
+{
+    display: block;
+    margin: 5px 0 5px 30px;
+}
+.button-cbox:hover {
+    background-color: white;
+    color: #006EFF;
+    font-weight: bold;
+}
+
+div.btn-Panel 
+{
+    display: none;
+}
+</style>
